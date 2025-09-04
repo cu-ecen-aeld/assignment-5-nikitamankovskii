@@ -1,0 +1,19 @@
+#! /bin/sh
+
+case "$1" in
+    start)
+        echo "Loading Scull & Faulty modules"
+        cd /sbin 
+        scull_load
+        module_load faulty
+        module_load hello
+        ;;
+    stop)
+        echo "Unloading Scull & Faulty modules"
+        cd sbin
+        scull_unload
+        module_unload faulty
+        module_unload hello
+        ;;
+esac
+exit 0
